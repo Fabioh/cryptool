@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <PackAsTool>true</PackAsTool>
+    <Version>1.0.0</Version>
+    <Description>A tool for obtaining the latest Bitcoin value in USD, EUR, GBP or BRL.
+
+ Install with the .NET CLI 2.1 or newer:
+ dotnet install tool -g cryptool
+ 
+ Run cryptool from the command line, for example:
+ `cryptool` or `cryptool BRL`</Description>
+  </PropertyGroup>
+
+</Project>
