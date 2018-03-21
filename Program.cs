@@ -4,6 +4,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using cryptool.Model;
+using Newtonsoft.Json;
 
 namespace cryptool
 {
@@ -27,9 +29,14 @@ namespace cryptool
 
             if (result.StatusCode != HttpStatusCode.OK)
             {
-                Console.WriteLine("Ocorreu um problema 😬");
+                Console.Error.WriteLine("Ocorreu um problema 😬");
                 Console.ForegroundColor = ConsoleColor.Red;
             }
+			else
+			{
+				var cruurentPrice = JsonConvert.DeserializeObject<CurrentPrice>(content);
+				Console.WriteLine(cruurentPrice.bpi.USD.rate_float);
+			}
 
             Console.WriteLine(content);          
         }
