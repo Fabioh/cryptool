@@ -1,0 +1,8 @@
+{
+	"profiles": {
+		"cryptool": {
+			"commandName": "Project",
+			//"commandLineArgs": "BRL"
+		}
+	}
+}

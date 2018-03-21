@@ -23,22 +23,31 @@ namespace cryptool
         static async Task Main(string[] args)
         {
             var uri = $"https://api.coindesk.com/v1/bpi/currentprice{ArgsResolver(args)}.json";
-
-            var result = await client.GetAsync(uri);
-            var content = await result.Content.ReadAsStringAsync();
-
-            if (result.StatusCode != HttpStatusCode.OK)
-            {
-                Console.Error.WriteLine("Ocorreu um problema 😬");
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-			else
+			try
 			{
-				var cruurentPrice = JsonConvert.DeserializeObject<CurrentPrice>(content);
-				Console.WriteLine(cruurentPrice.bpi.USD.rate_float);
-			}
 
-            Console.WriteLine(content);          
+				var result = await client.GetAsync(uri);
+				var content = await result.Content.ReadAsStringAsync();
+
+				if (result.StatusCode != HttpStatusCode.OK)
+				{
+					Console.Error.WriteLine("Ocorreu um problema 😬");
+					Console.ForegroundColor = ConsoleColor.Red;
+				}
+				else
+				{
+					var cruurentPrice = JsonConvert.DeserializeObject<CurrentPrice>(content);
+					Console.WriteLine(cruurentPrice.Bpi.USD.Rate_float);
+					Console.WriteLine(content);
+					Console.ReadLine();
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.Error.WriteLine($"Ocorreu um problema {Environment.NewLine} Detalhes: {ex.Message}");
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.ReadLine();
+			}
         }
     }
 }

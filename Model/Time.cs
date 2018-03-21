@@ -4,8 +4,8 @@ namespace cryptool.Model
 {
 	public class Time
 	{
-		public string updated { get; set; }
-		public DateTime updatedISO { get; set; }
-		public string updateduk { get; set; }
+		public string Updated { get; set; }
+		public DateTime UpdatedISO { get; set; }
+		public string Updateduk { get; set; }
 	}
 }

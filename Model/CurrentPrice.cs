@@ -3,9 +3,9 @@
 
 	public class CurrentPrice
 	{
-		public Time time { get; set; }
-		public string disclaimer { get; set; }
-		public string chartName { get; set; }
-		public Bpi bpi { get; set; }
+		public Time Time { get; set; }
+		public string Disclaimer { get; set; }
+		public string ChartName { get; set; }
+		public Bpi Bpi { get; set; }
 	}
 }

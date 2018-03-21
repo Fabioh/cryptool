@@ -1,6 +1,6 @@
 ﻿namespace cryptool.Model
 {
-	public class EUR : BaseCurrencyModel
+	public class BRL : BaseCurrencyModel
 	{
 	}
 }
