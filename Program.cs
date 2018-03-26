@@ -36,8 +36,8 @@ namespace cryptool
 				}
 				else
 				{
-					var cruurentPrice = JsonConvert.DeserializeObject<CurrentPrice>(content);
-					Console.WriteLine(cruurentPrice.Bpi.USD.Rate_float);
+					var curentPrice = JsonConvert.DeserializeObject<CurrentPrice>(content);
+					Console.WriteLine($"US${curentPrice.Bpi.USD.Rate_float}");
 					// Console.WriteLine(content);
 					Console.ReadLine();
 				}

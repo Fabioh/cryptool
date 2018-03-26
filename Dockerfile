@@ -22,4 +22,4 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y curl gpgv2 apt-tr
 
 WORKDIR /app/nupkg
 COPY --from=build-env /app/nupkg .
-# ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+# RUN dotnet install tool -g cryptool
